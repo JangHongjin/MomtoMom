@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOM to MOM</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/template-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/board.css">
+    
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+  </head>
+
+  <body class="size-1140">
+    <!-- HEADER -->
+    <header role="banner" class="position-absolute">
+      <!-- Top Navigation -->
+      <nav class="background-transparent background-transparent-hightlight full-width sticky">
+        <div class="s-12 l-2">
+          <a href="mainUnlogin.html" class="logo">
+            <!-- Logo White Version -->
+            <img class="logo-white" src="img/kt-logo-main.png" width="30%" alt="">
+            <!-- Logo Dark Version -->
+            <img class="logo-dark" src="img/kt-logo-main.png" alt="">
+          </a>
+        </div>
+        <div class="top-nav s-12 l-10">
+       		<ul class="right chevron">
+       			<li>
+				<form action="#" method="post">
+					<div class="dropdown">
+					  <button class="dropbtn">맘투맘 님&nbsp; &nbsp;<div class="fa fa-bars" aria-hidden="true"></div></button>
+					  <div class="dropdown-content">
+					    <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a>
+					    <a href="#">내 글</a>
+					    <a href="#">내 쪽지 </a>
+					  </div>
+					</div>
+
+	            </form>
+	            </li>
+        </ul>
+
+
+        </div>
+      </nav>
+      
+      	<!-- modal 1 -->
+		<div id="id01" class="modal">
+	      <form class="modal-content animate" action="./mainLogin.html" method="post">
+	        <div class="imgcontainer">
+	          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	          <img src="img/login-icon.png" alt="Avatar" class="avatar">
+	        </div>
+	        <div class="container">
+		        <label><b>ID</b></label>
+		        <input class="modaltext" type="text" placeholder="장씨에스" name="userName" required>
+		        <label><b>Nickname</b></label>
+		        <input class="modalpassword" type="password" placeholder="맘투맘" name="userPassword" required>
+		        <label><b>Password</b></label>
+		        <input type="text" placeholder=" " name="psw" required>
+		        <input type="text" placeholder=" " name="pswcheck" required>
+		        <label><b>Email</b></label>
+				<input class="modaltext" type="email" placeholder="example@example.com" name="userEmail" required>
+				<label><b>Phone</b></label>
+				<input class="modaltext" type="tel" placeholder="01012341234" name="userPhone" required>
+				<label><b>Baby Birth</b></label>
+				<input class="modaltext" type="number" placeholder="20151230" name="babyBirth" required>
+				<label><b>Company</b></label>
+				<input class="modaltext" type="text" placeholder="ktds" name="userCompany" required>
+				
+		        <button class="login" type="submit">수정</button>
+		        
+	        </div>
+	        <div class="container" style="background-color:#fff">
+	          <button class="login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">확인</button>
+	          
+	        </div>
+	      </form>
+	    </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main role="main">
+	
+	
+      <!-- Section -->
+      <section id="section1" class="section-top-padding full-width text-center">
+        <h2 class="text-size-50 text-center">MOM to MOM</h2>
+        <hr class="break-small background-primary break-center">
+        
+	        <div class="tab-content">
+	        	<div class="centerdivm">
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">복지맘</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-02.jpg" alt="" title="Portfolio Image 1" />
+                  </a>
+                </div>
+                <!--
+                <video tabindex="-1" class="video-stream html5-main-video" style="width: 963px; height: 542px; left: 0px; top: 50.6563px;" src="blob:https://www.youtube.com/d36bb143-3e20-488c-a797-ca3ab4353a64"></video>
+                -->
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">또래맘</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-09.jpg" alt="" title="Portfolio Image 2" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">교육맘</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-08.jpg" alt="" title="Portfolio Image 3" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">경력맘<br>[익명]</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-05.jpg" alt="" title="Portfolio Image 4" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">알뜰맘</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-06.jpg" alt="" title="Portfolio Image 5" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">성(姓)<br>[익명]</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-11.jpg" alt="" title="Portfolio Image 6" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">자유맘</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-12.jpg" alt="" title="Portfolio Image 7" />
+                  </a>
+                </div>
+                <div class="centerdiv s-3 m-1 l-1">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center">
+                        <h2 class="text-thin">QnA</h2>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-07.jpg" alt="" title="Portfolio Image 8" />
+                  </a>
+                </div>
+              </div>
+      		</div>      	
+        
+      </section>
+	
+		<section>
+			<div class="container">
+			  <div class="stick stick-1"></div>
+			  <div class="stick stick-2"></div>
+			  <div class="stick stick-3"></div>
+			</div>
+		
+			<div class="wrapper">
+		  
+				<div class="table">
+				  
+				  <div class="row header">
+				    <div class="cell">
+				      	번호
+				    </div>
+				    <div class="cell">
+				      	제목
+				    </div>
+				    <div class="cell">
+				      	작성자
+				    </div>
+				    <div class="cell">
+				      	조회
+				    </div>
+				    <div class="cell">
+				      	test
+				    </div>
+				  </div>
+				  
+				  <div class="row">
+				    <div class="cell">
+				      1
+				    </div>
+				    <div class="cell title">
+				      <a href="#">UI얼른끝내고싶다아아아아아</a>
+				    </div>
+				    <div class="cell">
+				      NickName1
+				    </div>
+				    <div class="cell">
+				      132
+				    </div>
+				    <div class="cell">
+				      <button class="button" onclick="">
+				      	승인
+				      </button>
+				    </div>
+				  </div>
+				  
+				  <div class="row">
+				    <div class="cell">
+				      1
+				    </div>
+				    <div class="cell">
+				      UI얼른끝내고싶다아아아아아
+				    </div>
+				    <div class="cell">
+				      NickName1
+				    </div>
+				    <div class="cell">
+				      132
+				    </div>
+				    <div class="cell">
+				      <button class="button" onclick="">
+				      	승인
+				      </button>
+				    </div>
+				  </div>
+				  
+				  <div class="row">
+				    <div class="cell">
+				      1
+				    </div>
+				    <div class="cell">
+				      UI얼른끝내고싶다아아아아아
+				    </div>
+				    <div class="cell">
+				      NickName1
+				    </div>
+				    <div class="cell">
+				      132
+				    </div>
+				    <div class="cell">
+				      <button class="button" onclick="">
+				      	승인
+				      </button>
+				    </div>
+				  </div>
+				  
+				  <div class="row">
+				    <div class="cell">
+				      1
+				    </div>
+				    <div class="cell">
+				      UI얼른끝내고싶다아아아아아
+				    </div>
+				    <div class="cell">
+				      NickName1
+				    </div>
+				    <div class="cell">
+				      132
+				    </div>
+				    <div class="cell">
+				      <button class="button" onclick="">
+				      	승인
+				      </button>
+				    </div>
+				  </div>
+				  
+				</div>
+				
+			  	<!-- 등록버튼 시작 -->
+				<div id="boardcss_list_add_button_table">
+					<div class="boardcss_list_add_button">
+						<p class="add_button">등록</p>
+						<ul></ul>
+					</div>
+				</div>
+				<!-- 등록버튼 종료 -->
+
+			  	<div id="boardcss_list_search" style="display:block;">
+				    <ul>
+				         <li>제목</li>
+				         <li><input id="search" type="text" name="search_subject" value="" /></li>
+				         <li class="search_button">검색</li>
+				         <li class="detail_button" onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
+				    </ul>
+				</div>
+			  	<!-- 상세검색 테이블 시작 -->
+				<div id="detailSearch" class="detailSearch" style="display:none;">
+					<table class="detailSearch_table" summary="" border="0">
+						<colgroup>
+							<col width="15%" />
+							<col width="30%" />
+							<col width="15%" />
+							<col width="40%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>제목</th>
+								<td><input id="search" type="text" name=""></td>
+								<th>이름</th>
+								<td><input id="search" type="text" name=""></td>
+							</tr>
+							<tr>
+								<th>등록일자</th>
+								<td colspan="2"><input id="search2" type="text" name="">~<input id="search2" type="text" name=""></td>
+								<td class="detailSearch_td">
+									<div class="detail_td">
+										<span class="detailSearch_button">검색</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="closeButton_table">
+						<a class="closeButton" onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
+					</div>
+				</div>
+				<!-- 상세검색 테이블 종료 -->
+			</div>
+		</section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+
+      <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 38, 51, 0.80);">
+
+      <!-- Bottom Footer -->
+      <section class="padding background-dark full-width">
+        <div class="s-12 l-6">
+          <p class="text-size-12">Copyright 2017, ktds edu</p>
+          <p class="text-size-12">All images have been gotten from pixabay which is free web site.</p>
+        </div>
+        <div class="s-12 l-6">
+          <a class="right text-size-12" title="Responsee - lightweight responsive framework">Design and coding<br> by mom2mom Team</a>
+        </div>
+      </section>
+    </footer>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+  </body>
+</html>

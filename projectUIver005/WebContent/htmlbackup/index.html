@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOM to MOM</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/template-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mainUnlogin.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!-- bootstrap 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+
+
+  </head>
+
+  <body class="size-1140">
+    <!-- HEADER -->
+    <header role="banner" class="position-absolute">
+      <!-- Top Navigation -->
+      <nav class="background-transparent background-transparent-hightlight full-width sticky">
+        <div class="s-12 l-2">
+          <a href="index.html" class="logo">
+            <!-- Logo White Version -->
+            <img class="logo-white" src="img/kt-logo-main.png" width="30%" alt="">
+            <!-- Logo Dark Version -->
+            <img class="logo-dark" src="img/kt-logo-main.png" alt="">
+          </a>
+        </div>
+        <div class="top-nav s-12 l-10">
+          <p class="nav-text"></p>
+          <ul class="right chevron">
+
+            <li>
+              <form action="mainLogin.html" method="post">
+                <fieldset class="email">
+                  <input placeholder="Email" type="email" name="email"/>
+                </fieldset>
+                <fieldset class="password">
+                  <input placeholder="Password" type="password" name="password"/>
+                </fieldset>
+                <button class="button" role="submit">
+                  <div class="fa fa-sign-in">&nbsp 로그인</div>
+                </button>
+                
+                <button class="button" type="button" onclick="document.getElementById('id01').style.display='block'">
+                  <div class="fa fa-sign-out">회원가입/pw찾기</div>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+    <div id="id01" class="modal">
+
+      <form class="modal-content animate" action="./loginedIndex.html" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="img/login-icon.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input type="password" placeholder="Repeat Password" name="pswcheck" required>
+
+          <button class="login" type="submit">Login</button>
+          <input type="checkbox" checked="checked"> Remember me
+        </div>
+
+        <div class="container" style="background-color:#fff">
+          <button class="login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#" onClick="alert('왜까먹었니')">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- MAIN -->
+
+
+    <main role="main">
+      <!-- Main Header -->
+      <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="img/header.jpg" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+                    <h1 class="text-white margin-bottom-30 text-size-60 text-m-size-30 text-line-height-1">MOM to MOM </h1>
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40">KT ktds kth m&s skylife nasmedia ktds kth m&s skylife nasmedia ktds kth m&s skylife nasmedia</p></div>
+                    <div class="line">
+                      <div class="s-12 m-12 l-3 center">
+                        <a class="button button-white-stroke s-12" href="#section1">입장!</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+
+      <!-- Section 4 -->
+      <section id="section1" class="section-top-padding full-width">
+        <h2 class="text-size-50 text-center">MOM 2 MOM</h2>
+        <hr class="break-small background-primary break-center">
+        <div class="tabs background-primary-hightlight">
+            <div class="tab-item tab-active">
+              <a class="tab-label active-btn">워킹맘</a>
+              <div class="tab-content lightbox-gallery">
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="test.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">복지맘</h2>
+                        <p>복지 정보를 확인하고 공유!</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-02.jpg" alt="" title="Portfolio Image 1" />
+                  </a>
+                </div>
+                <!--
+                <video tabindex="-1" class="video-stream html5-main-video" style="width: 963px; height: 542px; left: 0px; top: 50.6563px;" src="blob:https://www.youtube.com/d36bb143-3e20-488c-a797-ca3ab4353a64"></video>
+                -->
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="/board.html">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">경험맘</h2>
+                        <p>선배 워킹맘들의 경험을 공유!</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-09.jpg" alt="" title="Portfolio Image 2" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-08.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">알뜰맘</h2>
+                        <p>멀쩡한 물건은 버리지 말고 공유!</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-08.jpg" alt="" title="Portfolio Image 3" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-05.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">자유맘</h2>
+                        <p>자유롭게 매너롭게 이야기를 공유!</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-05.jpg" alt="" title="Portfolio Image 4" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">0~1세맘</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-06.jpg" alt="" title="Portfolio Image 5" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-11.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">2~3세맘</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-11.jpg" alt="" title="Portfolio Image 6" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-12.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">4~7세맘</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-12.jpg" alt="" title="Portfolio Image 7" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-07.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">8~13세맘</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-07.jpg" alt="" title="Portfolio Image 8" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-item">
+              <a class="tab-label">재무설계</a>
+              <div class="tab-content lightbox-gallery">
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">적금</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-04.jpg" alt="" title="Portfolio Image 1" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-06.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">주식</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-06.jpg" alt="" title="Portfolio Image 2" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-13.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">펀드</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-13.jpg" alt="" title="Portfolio Image 3" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-05.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">예금</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-05.jpg" alt="" title="Portfolio Image 4" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">비자금</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-12.jpg" alt="" title="Portfolio Image 5" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-14.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">주택</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-14.jpg" alt="" title="Portfolio Image 6" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-07.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">교육비</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-07.jpg" alt="" title="Portfolio Image 7" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">재테크</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-10.jpg" alt="" title="Portfolio Image 8" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-item">
+              <a class="tab-label">맘맘맘</a>
+              <div class="tab-content lightbox-gallery">
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-03.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-03.jpg" alt="" title="Portfolio Image 9" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-01.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-01.jpg" alt="" title="Portfolio Image 10" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-09.jpg" alt="" title="Portfolio Image 11" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-14.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-14.jpg" alt="" title="Portfolio Image 12" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-07.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-07.jpg" alt="" title="Portfolio Image 13" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-13.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-13.jpg" alt="" title="Portfolio Image 14" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/video.mp4">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-11.jpg" alt="" title="Portfolio Image 15" />
+                  </a>
+                </div>
+                <div class="s-12 m-6 l-3">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="img/portfolio/portfolio-04.jpg">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Lorem Ipsum Dolor</h2>
+                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                      </div>
+                    </div>
+                    <img src="img/portfolio/thumb-04.jpg" alt="" title="Portfolio Image 16" />
+                  </a>
+                </div>
+              </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="section background-white text-center">
+        <div class="line">
+          <h2 class="text-size-50 text-center">3월의 MOM2MOM</h2>
+          <hr class="break-small background-primary break-center">
+          <div class="carousel-default owl-carousel carousel-wide-arrows">
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <img class="image-testimonial-small" src="img/baby3.jpg" alt="">
+                <p class="h1 margin-bottom text-size-20">아이보는게 제일 쉬웠어요</p>
+                <p class="h1 text-size-16">최마미 / 웹 개발 / ktds</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <img class="image-testimonial-small" src="img/baby2.jpg" alt="">
+                <p class="h1 margin-bottom text-size-20">아이에게 많은 관심을 줄 수 있는 회사! </p>
+                <p class="h1 text-size-16">이마미 / IT기획 / KT</h5>
+              </div>
+            </div>
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <img class="image-testimonial-small" src="img/baby1.jpg" alt="">
+                <p class="h1 margin-bottom text-size-20">비비디바비디부</p>
+                <p class="h1 text-size-16">권마미 / DBA / ktds</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <!-- Contact Us -->
+      <div class="background-primary padding text-center">
+        <p class="h1">Contact Us: 02 0000 0000</p>
+      </div>
+
+      <!-- Main Footer -->
+      <section class="background-dark full-width">
+        <!-- Map -->
+        <div class="s-12 m-12 l-6 margin-m-bottom-2x">
+          <div class="s-12 grayscale center">
+            <!--
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1459734.5702753505!2d16.91089086619977!3d48.577103681657675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssk!2ssk!4v1457640551761" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+            -->
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4477.469265573022!2d126.99945033403002!3d37.48317287472425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI4JzU2LjQiTiAxMjfCsDAwJzEyLjgiRQ!5e0!3m2!1sko!2skr!4v1488463982921" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+          </div>
+        </div>
+
+        <!-- Collumn 2 -->
+        <div class="s-12 m-12 l-6 margin-m-bottom-2x">
+          <div class="padding-2x">
+            <div class="line">
+              <div class="float-left">
+                  <i class="icon-sli-location-pin text-primary icon3x"></i>
+                </div>
+                <div class="margin-left-70 margin-bottom-30">
+                  <h3 class="margin-bottom-0">Company Address</h3>
+                  <p>효령로 176<br>
+                     대한민국 서울특별시 서초구
+                  </p>
+                </div>
+                <div class="float-left">
+                  <i class="icon-sli-envelope text-primary icon3x"></i>
+                </div>
+                <div class="margin-left-70 margin-bottom-30">
+                  <h3 class="margin-bottom-0">E-mail</h3>
+                  <p>contact@sampledomain.com<br>
+                     office@sampledomain.com
+                  </p>
+                </div>
+                <div class="float-left">
+                  <i class="icon-sli-phone text-primary icon3x"></i>
+                </div>
+                <div class="margin-left-70">
+                  <h3 class="margin-bottom-0">Phone Numbers</h3>
+                  <p>010 0000 0000<br>
+                     010 0000 0000<br>
+                     010 0000 0000<br>
+                     010 0000 0000
+                  </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 38, 51, 0.80);">
+
+      <!-- Bottom Footer -->
+      <section class="padding background-dark full-width">
+        <div class="s-12 l-6">
+          <p class="text-size-12"></p>
+          <p class="text-size-12"></p>
+        </div>
+        <div class="s-12 l-6">
+          <a class="right text-size-12" title="Responsee - lightweight responsive framework"></a>
+        </div>
+      </section>
+    </footer>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+    
+  </body>
+</html>

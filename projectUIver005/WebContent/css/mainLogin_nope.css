@@ -1,0 +1,125 @@
+@CHARSET "EUC-KR";
+
+/* body {
+  background:none repeat scroll 0 0 #d3d3d3;
+  font-size:16px;
+  font-family:"Open Sans",Arial,sans-serif;
+  color:#444;
+} */
+
+header.position-absolute {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.tab-item.tab-active {
+  display: block;
+}
+
+.tab-content {
+  text-align: left;
+  margin: 1rem;
+}
+
+/* Custom Template Styles */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Playfair Display";
+}
+
+.background-transparent {
+  background: none;
+}
+
+.background-transparent-hightlight .top-nav .active-item > a, .background-transparent-hightlight .top-nav li a:hover, .background-transparent-hightlight .aside-nav li a:hover, .background-transparent-hightlight .aside-nav > ul > li.active-item > a:link, .background-transparent-hightlight .aside-nav > ul > li.active-item > a:visited {
+  background: rgba(255, 255, 255, 0.08) none repeat scroll 0 0;
+  color: #fff;
+  opacity: 1;
+}
+nav.background-transparent-hightlight.fixed .top-nav .active-item > a, nav.background-transparent-hightlight.fixed .top-nav li a:hover, nav.background-transparent-hightlight.fixed .aside-nav li a:hover, nav.background-transparent-hightlight.fixed .aside-nav > ul > li.active-item > a:link, nav.background-transparent-hightlight.fixed .aside-nav > ul > li.active-item > a:visited {
+  background: none;
+  color: #000;
+  opacity: 1;
+}
+.background-transparent-hightlight .top-nav ul ul .active-item a, .background-transparent-hightlight .top-nav ul ul li a:hover, .background-transparent-hightlight .aside-nav ul ul li a:hover, .background-transparent-hightlight .aside-nav > ul > li.active-item > a:link, .background-transparent-hightlight .aside-nav > ul > li.active-item > a:visited {
+  color: #000;
+}
+
+.logo img {
+  margin: 0;
+  max-width: 200px;
+  position: relative;
+  top: 12px;
+  width: 30%;
+}
+
+
+/* Top Nav */
+.top-nav li a, .background-white .top-nav li a {
+  color: #002633;
+  font-size: 0.85rem;
+  padding: 0.7em 1.25em;
+}
+nav {
+  border-bottom: 4px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.7rem 0;
+  position: relative;
+  z-index: 2;
+}
+.top-nav ul ul {
+  background: #002633 none repeat scroll 0 0;
+}
+.top-nav li ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.top-nav li ul li:last-child {
+  border-bottom: 0;
+}
+.top-nav li ul li a, .background-white .top-nav li ul li a, .top-nav .active-item li a {
+  background: #002633 none repeat scroll 0 0;
+  color: rgba(255,255,255, 0.75);
+}
+ul.chevron .submenu > a::after, ul.chevron .sub-submenu > a::after, ul.chevron .aside-submenu > a::after, ul.chevron .aside-sub-submenu > a::after {
+  margin: 0 0 0 0.625rem;
+}
+.top-nav ul ul a {
+  color: #eee;
+}
+.sticky {
+  transition: all 0.20s linear 0s;
+  -o-transition: all 0.20s linear 0s;
+  -ms-transition: all 0.20s linear 0s;
+  -moz-transition: all 0.20s linear 0s;
+  -webkit-transition: all 0.20s linear 0s;
+}
+.fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+nav.fixed, .fixed nav {
+  padding: 1rem 0;
+}
+.logo img {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 30%;
+}
+
+
+
+@media screen and (max-width:768px) {
+  header.position-absolute {
+    background: #fff none repeat scroll 0 0;
+    position: relative;
+  }
+}
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- HEADER -->
+    <header role="banner" class="position-absolute">
+      <!-- Top Navigation -->
+      <nav class="background-transparent background-transparent-hightlight full-width sticky">
+        <div class="s-12 l-2">
+          <a href="mainUnlogin.html" class="logo">
+            <!-- Logo White Version -->
+            <img class="logo-white" src="img/kt-logo-main.png" width="30%" alt="">
+            <!-- Logo Dark Version -->
+            <img class="logo-dark" src="img/kt-logo-main.png" alt="">
+          </a>
+        </div>
+        <div class="top-nav s-12 l-10">
+       		<ul class="right chevron">
+       			<li>
+				<form action="#" method="post">
+					<div class="dropdown">
+					  <button class="dropbtn">맘투맘 님<div class="fa fa-bars" aria-hidden="true"></div></button>
+					  <div class="dropdown-content">
+					    <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a>
+					    <a href="board.html">내 글</a>
+					    <a href="#">내 쪽지</a>
+					  </div>
+					</div>
+
+	            </form>
+	            </li>
+	   			
+
+         	 
+        </ul>
+
+
+        </div>
+      </nav>
+      
+      	<!-- modal 1 -->
+		<div id="id01" class="modal">
+	      <form class="modal-content animate" action="./mainLogin.html" method="post">
+	        <div class="imgcontainer">
+	          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	          <img src="img/login-icon.png" alt="Avatar" class="avatar">
+	        </div>
+	        <div class="container">
+		        <label><b>ID</b></label>
+		        <input class="modaltext" type="text" placeholder="장씨에스" name="userName" required>
+		        <label><b>Nickname</b></label>
+		        <input class="modalpassword" type="password" placeholder="맘투맘" name="userPassword" required>
+		        <label><b>Password</b></label>
+		        <input type="text" placeholder=" " name="psw" required>
+		        <input type="text" placeholder=" " name="pswcheck" required>
+		        <label><b>Email</b></label>
+				<input class="modaltext" type="email" placeholder="example@example.com" name="userEmail" required>
+				<label><b>Phone</b></label>
+				<input class="modaltext" type="tel" placeholder="01012341234" name="userPhone" required>
+				<label><b>Baby Birth</b></label>
+				<input class="modaltext" type="number" placeholder="20151230" name="babyBirth" required>
+				<label><b>Company</b></label>
+				<input class="modaltext" type="text" placeholder="ktds" name="userCompany" required>
+				
+		        <button class="login" type="submit">수정</button>
+		        
+	        </div>
+	        <div class="container" style="background-color:#fff">
+	          <button class="login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">확인</button>
+	          
+	        </div>
+	      </form>
+	    </div>
+    </header>
+</body>
+</html>
