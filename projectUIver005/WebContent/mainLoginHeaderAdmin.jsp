@@ -10,7 +10,7 @@
       <!-- Top Navigation -->
       <nav class="background-transparent background-transparent-hightlight full-width sticky">
         <div class="s-12 l-2">
-          <a href="${path}/mainLogin.jsp" class="logo">
+          <a href="${path}/mainLoginAdmin.jsp" class="logo">
             <!-- Logo White Version -->
             <img class="logo-white" src="${path}/img/kt-logo-main.png" width="30%" alt="">
             <!-- Logo Dark Version -->

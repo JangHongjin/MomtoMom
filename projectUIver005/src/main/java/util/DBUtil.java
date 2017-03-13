@@ -23,6 +23,7 @@ public class DBUtil {
    }
 
    public static Connection getConnection() throws SQLException {
+	   //mysql -u root -h 192.168.207.20 -p
       return DriverManager.getConnection("jdbc:mysql://192.168.207.20/mom?zeroDateTimeBehavior=convertToNull","root","apmsetup");
    }
 
