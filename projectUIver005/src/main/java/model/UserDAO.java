@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-import javax.servlet.http.HttpSession;
+import java.util.List;
 
 import model.domain.UserDTO;
 import util.DBUtil;
@@ -134,6 +133,67 @@ public class UserDAO {
 			DBUtil.close(con, pstmt);
 		}
 		return user;
+	}
+	// 회원 수
+	public static int countUser(String searchOption, String keyword) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		int count = 0;
+		try {
+			con = DBUtil.getConnection();
+			if(searchOption.equals("all")){
+				pstmt = con.prepareStatement("SELECT COUNT(*) FROM user "
+						+ "WHERE usr_email like '%" + keyword + "%'"
+						+ "OR usr_phone like '%" + keyword + "%'"
+						+ "OR usr_nick like '%" + keyword + "%'");
+			}
+			else{
+				pstmt = con.prepareStatement("SELECT COUNT(*) FROM user "
+						+ "WHERE " + searchOption + " like '%" + keyword + "%'");
+			}
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				count = rset.getInt(1);
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return count;
+	}
+	
+	// 회원 리스트
+	public static List<UserDTO> userList(String searchOption, String keyword) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<UserDTO> list = null;//***
+		try {
+			con = DBUtil.getConnection();
+			if(searchOption.equals("all")){
+				pstmt = con.prepareStatement("SELECT * FROM user "
+						+ "WHERE usr_email like '%" + keyword + "%'"
+						+ "OR usr_phone like '%" + keyword + "%'"
+						+ "OR usr_nick like '%" + keyword + "%'");
+			}
+			else{
+				pstmt = con.prepareStatement("SELECT * FROM user "
+						+ "WHERE " + searchOption + " like '%" + keyword + "%'");
+			}
+			
+			rset = pstmt.executeQuery();
+
+			list = new ArrayList<UserDTO>();
+			while (rset.next()) {
+				list.add(new UserDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
+						rset.getString(5), rset.getString(6), rset.getString(7), rset.getInt(8)));
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+		
 	}
 
 	// (*관리자용) 회원 확인

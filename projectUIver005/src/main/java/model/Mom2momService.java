@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -153,7 +154,15 @@ public class Mom2momService {
     	UserDTO user =UserDAO.getUser(usrNick);
 		return user;
     }
-    //회원정보보기-관리자
+    //회원 리스트
+    public static List<UserDTO> userList(String searchOption, String keyword) throws Exception{
+    	return UserDAO.userList(searchOption, keyword);
+    }
+    //회원 레코드 개수
+    public static int countUser(String searchOption, String keyword) throws Exception{
+    	return UserDAO.countUser(searchOption, keyword);
+    }
+    //회원 리스트 - 관리자
     public static ArrayList<UserDTO> getAllUser()throws Exception{
     	ArrayList<UserDTO> list = UserDAO.getAllUser();
     	return list;

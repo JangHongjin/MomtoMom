@@ -1,10 +1,15 @@
 package controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.Mom2momService;
@@ -91,10 +96,28 @@ public class UserController {
     }
     //회원리스트보기-관리자뷰
     @RequestMapping(value="getAllUser.do")
-    public ModelAndView getAllUser(HttpSession session)throws Exception{
+    public ModelAndView getAllUser(@RequestParam(defaultValue="usr_email") String searchOption,
+    								@RequestParam(defaultValue="") String keyword,
+    								HttpSession session)throws Exception{
+    	List<UserDTO> list = Mom2momService.userList(searchOption, keyword);//****
+    	// 레코드의 갯수
+        int count = Mom2momService.countUser(searchOption, keyword);//***
     	ModelAndView mv = new ModelAndView();
+    	/*mav.addObject("list", list); // 데이터를 저장
+        mav.addObject("count", count);
+        mav.addObject("searchOption", searchOption);
+        mav.addObject("keyword", keyword);*/
+        // 데이터를 맵에 저장
+    	Map<String, Object> map = new HashMap<String, Object>();
+        map.put("list", list); // list
+        map.put("count", count); // 레코드의 갯수
+        map.put("searchOption", searchOption); // 검색옵션
+        map.put("keyword", keyword); // 검색키워드
+        mv.addObject("map", map); // 맵에 저장된 데이터를 mav에 저장
+
+    	
     	mv.setViewName("userList");
-    	mv.addObject("getAllUser",Mom2momService.getAllUser());
+    	//mv.addObject("getAllUser",Mom2momService.getAllUser());
     	return mv;
     }
     //회원정보수정-개인

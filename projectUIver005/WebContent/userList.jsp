@@ -34,8 +34,22 @@
 			  <div class="stick stick-2"></div>
 			  <div class="stick stick-3"></div>
 			</div>
-			
-			<input type="button" value="회원등록" onclick="location.href='${path}/userSignin.jsp'"/>
+			<h2>게시글 목록</h2>
+		    <form name="form3" method="post" action="${path}/user/getAllUser.do">
+		        <select name="searchOption">
+		            <!-- 검색조건을 검색처리후 결과화면에 보여주기위해  c:out 출력태그 사용, 삼항연산자 -->
+		            <option value="all" <c:out value="${map.searchOption == 'all'?'selected':''}"/> >닉네임+이메일+휴대전화</option>
+		            <option value="usr_nick" <c:out value="${map.searchOption == 'usr_nick'?'selected':''}"/> >닉네임</option>
+		            <option value="usr_email" <c:out value="${map.searchOption == 'usr_email'?'selected':''}"/> >이메일</option>
+		            <option value="usr_phone" <c:out value="${map.searchOption == 'usr_phone'?'selected':''}"/> >휴대전화</option>
+		        </select>
+		        <input name="keyword" value="${map.keyword}">
+		        <input type="submit" value="조회">
+<!-- 		        <button type="button" id="btnWrite">글쓰기</button> -->
+		    </form>
+		    <!-- 레코드의 갯수를 출력 -->
+		    ${map.count}명의 회원이 있습니다.
+
 			<div class="wrapper">
 				<div class="table">
 				  <div class="row header">
@@ -49,7 +63,7 @@
 				    <div class="cell">Exist</div>
 				    <div class="cell">Grant Management</div>
 				  </div>
-				  <c:forEach var="data" items="${getAllUser}">
+				  <c:forEach var="data" items="${map.list}">
 				  	<div class="row">
 					    <div class="cell title">
 					      <a href="${path}/user/getUserAdmin.do?usrNick=${data.usrNick}">${data.usrNick}</a>
