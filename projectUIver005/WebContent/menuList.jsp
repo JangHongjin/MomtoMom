@@ -15,7 +15,7 @@
           <!-- <a class="tab-label active-btn">워킹맘</a> -->
           <div class="tab-content">
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/img/portfolio/video.mp4">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">복지맘</h2>

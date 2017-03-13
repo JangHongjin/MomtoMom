@@ -58,7 +58,7 @@
 									<button class="dropbtn">${sessionScope.usrNick} 님[관리자] 환영합니다!&nbsp;<div class="fa fa-bars" aria-hidden="true"></div></button>
 									<div class="dropdown-content">
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
-									    <a href="#" onclick="location.href='${path}/user/getUser.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
+									    <a href="#" onclick="location.href='${path}/user/getUserAdmin.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
 									    <a href="#">내 쪽지</a>
 									    <a href="${path}/user/getAllUser.do">회원 관리</a>
@@ -69,7 +69,7 @@
 									<button class="dropbtn">${sessionScope.usrNick} 님[관리자]&nbsp;<div class="fa fa-bars" aria-hidden="true"></div></button>
 									<div class="dropdown-content">
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
-									    <a href="#" onclick="location.href='${path}/user/getUser.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
+									    <a href="#" onclick="location.href='${path}/user/getUserAdmin.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
 									    <a href="#">내 쪽지</a>
 									    <a href="${path}/user/getAllUser.do">회원 관리</a>
