@@ -6,6 +6,13 @@
 	<%@ include file="./mainHeader.jsp" %>
 	<link rel="stylesheet" href="${path}/css/menu.css">
 	<link rel="stylesheet" href="${path}/css/board.css">
+	<c:if test="${sessionScope.usrGrant != '관리자'}">
+	    <script>
+	        alert("관리자만 접근 가능한 페이지입니다.");
+	        location.href="${path}/mainUnlogin.jsp"; 
+	    </script>
+	</c:if>
+	
 </head>
 
 <body class="size-1140">
@@ -31,7 +38,7 @@
 		    
 		    <!-- modal form -->
 			<div id="id01" class="">
-		      <form name="form1" class="modal-content animate" action="#" method="post">
+		      <form name="form2" class="modal-content animate" method="post">
 		        <div class="imgcontainer">
 		          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 		          <img src="${path}/img/login-icon.png" alt="Avatar" class="avatar">
@@ -102,8 +109,8 @@
 	        $("#btnUpdate").click(function(){
 	            // 확인 대화상자    
 	            if(confirm("수정하시겠습니까?")){
-	                document.form1.action = "${path}/user/updateUser.do";
-	                document.form1.submit();
+	                document.form2.action = "${path}/user/updateUser.do";
+	                document.form2.submit();
 	            }
 	        });
 	    });
@@ -112,8 +119,8 @@
 	        $("#btnDelete").click(function(){
 	            // 확인 대화상자 
 	            if(confirm("삭제하시겠습니까?")){
-	                document.form1.action = "${path}/user/deleteUser.do";
-	                document.form1.submit();
+	                document.form2.action = "${path}/user/deleteUser.do";
+	                document.form2.submit();
 	            }
 	        });
 	    });

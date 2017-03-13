@@ -35,6 +35,7 @@ public class UserController {
     		}
     		mv.addObject("message", "success");
     	}else{
+    		System.out.println("비번불일치?");
     		mv.setViewName("mainUnlogin");
         	mv.addObject("message", "이메일 또는 비밀번호가 일치하지 않습니다.");
     	}
@@ -62,8 +63,14 @@ public class UserController {
     public ModelAndView insertUser(UserDTO user)throws Exception{
     	ModelAndView mv = new ModelAndView();
     	mv.setViewName("mainUnlogin");
-    	mv.addObject("insertUser", Mom2momService.insertUser(user));
-    	mv.addObject("message", "가입 신청이 완료되었습니다.");
+    	if(Mom2momService.insertUser(user)){	//insert 성공시 true 반환
+    		mv.addObject("message", "가입 신청이 완료되었습니다.");
+    		//return "forward:/message/getAllSendMessage.do";	// redirct, forward로 처리
+    	}else{
+    		mv.addObject("message", "중복된 아이디 혹은 잘못된 양식을 입력하였습니다.");
+    		//return "forward:/message/getAllSendMessage.do";	// 그래야 잘못입력시 입력데이터 유지 
+    	}
+    	
     	return mv;	//이미 존재할 경우 false반환함
     }
     //회원정보보기-일반
@@ -127,18 +134,25 @@ public class UserController {
     public ModelAndView deleteUser(UserDTO user, HttpSession session)throws Exception{
     	ModelAndView mv = new ModelAndView();
     	//비민번호 체크	- usrNick 반환
-    	String result = Mom2momService.loginCheck(user.getUsrEmail(), user.getUsrPw(), session);
-    	System.out.println(user.getUsrPw());
+    	String result = Mom2momService.PwCheck(user.getUsrEmail(), user.getUsrPw());
+    	System.out.println(session.getAttribute("usrGrant"));
     	System.out.println("result값!@ " + result);
     	if(result.equals(user.getUsrNick())){	//비밀번호 일치하면 삭제 처리후, 전체 회원 목록으로
     		Mom2momService.deleteUser(user);
-    		if(session.getAttribute("usrGrant") == "관리자"){
-    			mv.setViewName("userDetailAdmin");
+    		System.out.println("***" + session.getAttribute("usrGrant"));
+    		System.out.println("#####");
+    		if(session.getAttribute("usrGrant") != null && session.getAttribute("usrGrant").equals("관리자")){
+    			System.out.println("@@@@" + session.getAttribute("usrGrant"));
+    			mv.setViewName("userList");
+    			mv.addObject("getAllUser",Mom2momService.getAllUser());
     		}else{
+    			System.out.println("----" + session.getAttribute("usrGrant"));
     			mv.setViewName("mainUnlogin");//*** 자동 로그아웃처리 필요
+    			Mom2momService.logout(session);
     		}
-    		mv.addObject("getAllUser",Mom2momService.getAllUser());
-    		mv.addObject("message", "삭제 완료되었습니다.<a href='${path}/user/getAllUser.do'>회원리스트</a>");
+    		System.out.println("#####");
+    		
+    		mv.addObject("message", "삭제 완료되었습니다.");
     	}else{	//비밀번호 불일치, div에 불일치 문구 출력, userDetail.jsp로 포워드
     		mv.setViewName("userDetail");
     		mv.addObject("getUser", user);

@@ -60,7 +60,7 @@
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
 									    <a href="#" onclick="location.href='${path}/user/getUserAdmin.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
-									    <a href="#">내 쪽지</a>
+									    <a href="#" onclick="location.href='${path}/message/getAllReceiveMessage.do?rid=${sessionScope.usrNick}'">내 쪽지</a>
 									    <a href="${path}/user/getAllUser.do">회원 관리</a>
 									    <a href="${path}/user/logout.do">로그아웃</a>
 									  </div>
@@ -71,7 +71,7 @@
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
 									    <a href="#" onclick="location.href='${path}/user/getUserAdmin.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
-									    <a href="#">내 쪽지</a>
+									    <a href="#" onclick="location.href='${path}/message/getAllReceiveMessage.do?rid=${sessionScope.usrNick}'">내 쪽지</a>
 									    <a href="${path}/user/getAllUser.do">회원 관리</a>
 									    <a href="${path}/user/logout.do">로그아웃</a>
 									  </div>

@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,9 +33,12 @@ public class MessageController {
 		// 받은쪽지확인
 		@RequestMapping(value = "getAllReceiveMessage.do")
 		public ModelAndView getAllReceiveMessage(String rid) throws Exception {
+			System.out.println(rid);
+			
 			ModelAndView mv = new ModelAndView();
-			mv.setViewName("받은쪽지함화면");
+			mv.setViewName("rMsgList");
 			mv.addObject("getAllReceiveMessage", Mom2momService.getAllReceiveMessage(rid));
+			mv.addObject("rid", rid);
 			return mv;
 		}
 
@@ -42,8 +46,9 @@ public class MessageController {
 		@RequestMapping(value = "getAllSendMessage.do")
 		public ModelAndView sentAllMessage(String sid) throws Exception {
 			ModelAndView mv = new ModelAndView();
-			mv.setViewName("보낸쪽지함화면");
+			mv.setViewName("sMsgList");
 			mv.addObject("getAllSendMessage", Mom2momService.getAllSendMessage(sid));
+			mv.addObject("sid", sid);
 			return mv;
 		}
 
@@ -56,12 +61,19 @@ public class MessageController {
 			return mv;
 		}
 
-		// 쪽지삭제
+		// 받은쪽지삭제
 		@RequestMapping(value = "deleteMessage.do")
-		public ModelAndView deleteMessage(int msgNo) throws Exception {
-			ModelAndView mv = new ModelAndView();
-			mv.setViewName("받은쪽지or보낸쪽지함");
-			mv.addObject("deleteMessage",Mom2momService.deleteMessage(msgNo));
-			return mv;
+		public String deleteMessage(int msgNo, @ModelAttribute String rid) throws Exception {
+			System.out.println("++++++ " + rid);
+			Mom2momService.deleteMessage(msgNo);
+			return "forward:/message/getAllReceiveMessage.do";
+		}
+		
+		// 보낸쪽지삭제
+		@RequestMapping(value = "deleteMessage2.do")
+		public String deleteMessage2(int msgNo, @ModelAttribute String sid) throws Exception {
+			System.out.println("++++++ " + sid);
+			Mom2momService.deleteMessage(msgNo);
+			return "forward:/message/getAllSendMessage.do";
 		}
 }

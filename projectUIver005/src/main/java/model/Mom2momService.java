@@ -111,7 +111,6 @@ public class Mom2momService {
     
     //회원가입 
     public static boolean insertUser(UserDTO user)throws Exception{
-    	System.out.println("in service " + user);
     	return UserDAO.insertUser(user);	//이미존재하는 아이디일 경우 false반환
     }
     //비밀번호 체크
@@ -119,16 +118,28 @@ public class Mom2momService {
     	String result = UserDAO.loginCheck(email, pw);
     	return result;
     }
+    //패스워드 체크
+    public static String PwCheck(String email, String pw)throws Exception{
+    	String result = UserDAO.loginCheck(email, pw);
+    	
+    	return result;
+    }
     //로그인
     public static String loginCheck(String email, String pw, HttpSession session)throws Exception{
+    	System.out.println("로그인 체크전");
     	String result = UserDAO.loginCheck(email, pw);
+    	System.out.println("로그인 체크후 result : " + result);
+    	
     	if(result != null){	// 로그인 체크결과 usrNick값이 반환되었다면
     		UserDTO user = UserDAO.getUser(result);
+    		System.out.println("로그인 체크후 user : " + user);
     		//세션 변수 등록
     		session.setAttribute("usrNick", user.getUsrNick());
     		session.setAttribute("usrEmail", user.getUsrEmail());
     		session.setAttribute("usrGrant", user.getUsrGrant());
-    		
+    	}else
+    	{
+    		System.out.println("이것은 오류");
     	}
     	return result;
     }
@@ -201,12 +212,15 @@ public class Mom2momService {
     
     //쪽지삭제
     public static boolean deleteMessage(int msgNo)throws Exception{
-    	
     	return MessageDAO.deleteMessage(msgNo);
     }
     //쪽지 보내기
     public static boolean writeMessage(MessageDTO message)throws Exception{
     	return MessageDAO.writeMessage(message);
+    }
+    //댓글확인
+    public static ArrayList<CommentDTO> getAllComment(int bPno)throws Exception{
+    	return CommentDAO.getAllComment(bPno);
     }
     //댓글작성
     public static boolean writeComment(CommentDTO comm)throws Exception{

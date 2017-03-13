@@ -88,6 +88,7 @@ public class UserDAO {
 		try {
 			con = DBUtil.getConnection();
 			if (getUser(user.getUsrNick()) != null) {		//기존에 존재하는 유저?
+				System.out.println("기존에 존재하는 유저 UserDAO.java 91line");
 				return false;
 			} else {
 				System.out.println(user);

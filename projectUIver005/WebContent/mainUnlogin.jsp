@@ -42,9 +42,9 @@
                   <div class="fa fa-sign-in">&nbsp; 로그인</div>
                 </button>
                 
-                <!-- <button class="button" type="button" onclick="document.getElementById('id01').style.display='block'">
+                <button class="button" type="button" onclick="document.getElementById('id01').style.display='block'">
                   <div class="fa fa-sign-out">회원가입/pw찾기</div>
-                </button> -->
+                </button>
                 <button class="button" type="button" onclick="location.href='${path}/userSignin.jsp'">
                   <div class="fa fa-sign-out">회원가입/pw찾기</div>
                 </button>
@@ -58,38 +58,38 @@
 
 
     <div id="id01" class="modal">
-      <form class="modal-content animate" action="./mainLogin.jsp" method="post">
+      <form name="form2" class="modal-content animate" action="${path}/user/insertUser.do" method="post">
+      	<div class="right">
+      		<h2><a href="${path}/findId.jsp">Forgot password?</a></h2>
+      	</div>
         <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          
           <img src="${path}/img/login-icon.png" alt="Avatar" class="avatar">
         </div>
         <div class="container">
 	        <label><b>ID</b></label>
-	        <input class="modaltext" type="text" placeholder="Enter Username" name="userName" required>
-	        <label><b>Nickname</b></label>
-	        <input class="modalpassword" type="password" placeholder="Enter Nickname" name="userPassword" required>
-	        <label><b>Password</b></label>
-	        <input type="text" placeholder="Enter Password" name="psw" required>
-	        <input type="text" placeholder="Repeat Password" name="pswcheck" required>
+	        <input class="modaltext" type="text" placeholder="Nickname" name="usrNick" required>
 	        <label><b>Email</b></label>
-			<input class="modaltext" type="email" placeholder="example@example.com" name="userEmail" required>
-			<label><b>Phone</b></label>
-			<input class="modaltext" type="tel" placeholder="- 없이 입력해주세요." name="userPhone" required>
-			<label><b>Baby Birth</b></label>
-			<input class="modaltext" type="number" placeholder="아기 출생년,월,일을 입력해주세요. ex)20151230" name="babyBirth" required>
-			<label><b>Company</b></label>
-			<input class="modaltext" type="text" placeholder="kt, ktds, kth .." name="userCompany" required>
-			
-	        <button class="login" type="submit">가입신청</button>
-	        <a href="findId.jsp">ID/PW가 기억나지 않아요..</a>
-	        <!-- <input type="checkbox" checked="checked"> Remember me -->
+	        <input class="modaltext" type="email" placeholder="example@example.com" name="usrEmail" required>
+	        <label><b>Password</b></label>
+	        <input class="modalpassword" type="password" placeholder="8자리 이상 숫자+영문자 권장" name="usrPw"" required>
+	        <!-- <label><b>Password Check</b></label>
+	        <input class="modalpassword" type="password" name="usrPw2" required> -->
+	        <label><b>BabyBirth</b></label>
+	        <input class="modaltext" type="date" style="ime-mode:inactive" placeholder="yyyy-mm-dd" name="usrBirth">
+	        <label><b>Company</b></label>
+	        <input class="modaltext" type="text" placeholder="kt, ktds, kth, .." name="usrCom">
+	        <label><b>Phone</b></label>
+	        <input class="modaltext" type="text" placeholder="01012341234" name="usrPhone" required>
 	        
+	        
+	        <input type="hidden" name="usrExist" value="0">
+	        <input type="hidden" name="usrGrant" value="Guest">
+	        <input class="btn" type="submit" value="가입신청">
+                  <input class="btn" type="reset" value="취소">
+                  
         </div>
-
-        <div class="container" style="background-color:#fff">
-          <button class="login" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#" onClick="alert('왜까먹었니')">password?</a></span>
-        </div>
+        
       </form>
     </div>
 
@@ -135,21 +135,21 @@
           <div class="carousel-default owl-carousel carousel-wide-arrows">
             <div class="item">
               <div class="s-12 m-12 l-7 center text-center">
-                <img class="image-testimonial-small" src="img/baby3.jpg" alt="">
+                <img class="image-testimonial-small" src="${path}/img/baby3.jpg" alt="">
                 <p class="h1 margin-bottom text-size-20">아이보는게 제일 쉬웠어요</p>
                 <p class="h1 text-size-16">최마미 / 웹 개발 / ktds</p>
               </div>
             </div>
             <div class="item">
               <div class="s-12 m-12 l-7 center text-center">
-                <img class="image-testimonial-small" src="img/baby2.jpg" alt="">
+                <img class="image-testimonial-small" src="${path}/img/baby2.jpg" alt="">
                 <p class="h1 margin-bottom text-size-20">아이에게 많은 관심을 줄 수 있는 회사! </p>
                 <p class="h1 text-size-16">이마미 / IT기획 / KT</h5>
               </div>
             </div>
             <div class="item">
               <div class="s-12 m-12 l-7 center text-center">
-                <img class="image-testimonial-small" src="img/baby1.jpg" alt="">
+                <img class="image-testimonial-small" src="${path}/img/baby1.jpg" alt="">
                 <p class="h1 margin-bottom text-size-20">비비디바비디부</p>
                 <p class="h1 text-size-16">권마미 / DBA / ktds</p>
               </div>
@@ -199,7 +199,7 @@
 	                return;
 	            }
 	            // 폼 내부의 데이터를 전송할 주소
-	            document.form1.action="${path}/user/loginCheck.do"
+	            document.form1.action="<c:out value='${path}'/>/user/loginCheck.do"
 	            // 제출
 	            document.form1.submit();
 	        });

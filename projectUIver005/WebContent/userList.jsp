@@ -6,6 +6,18 @@
 	<%@ include file="./mainHeader.jsp" %>
 	<link rel="stylesheet" href="${path}/css/menu.css">
 	<link rel="stylesheet" href="${path}/css/board.css">
+	<c:if test="${sessionScope.usrGrant != '관리자'}">
+		<script>
+		    alert("관리자만 접근 가능한 페이지입니다.");
+		    location.href="${path}/mainLogin.jsp"; 
+		</script>
+	</c:if>
+	<script>
+		var grant = "<c:out value='${message}'/>";
+		if(grant != ""){
+			alert(grant);	
+		}
+	</script>
 </head>
 
 <body class="size-1140">

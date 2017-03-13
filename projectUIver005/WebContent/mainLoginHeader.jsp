@@ -32,7 +32,7 @@
 		                  <input placeholder="Password" type="password" name="usrPw"/>
 		                </fieldset>
 		                <button class="button" id="btnLogin">
-		                  <div class="fa fa-sign-in">&nbsp; 로그인</div>
+		                  <div class="fa fa-sign-in">&nbsp; 로그인***</div>
 		                </button>
 		                
 		                <!-- <button class="button" type="button" onclick="document.getElementById('id01').style.display='block'">
@@ -60,7 +60,7 @@
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
 									    <a href="#" onclick="location.href='${path}/user/getUser.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
-									    <a href="#">내 쪽지</a>
+									    <a href="#" onclick="location.href='${path}/message/getAllReceiveMessage.do?rid=${sessionScope.usrNick}'">내 쪽지</a>
 									    <a href="${path}/user/logout.do">로그아웃</a>
 									  </div>
 								</c:when>
@@ -70,7 +70,7 @@
 									    <!-- <a href="#" onclick="document.getElementById('id01').style.display='block'"">내 정보</a> -->
 									    <a href="#" onclick="location.href='${path}/user/getUser.do?usrNick=${sessionScope.usrNick}'">내 정보</a>
 									    <a href="board.jsp">내 글</a>
-									    <a href="#">내 쪽지</a>
+									    <a href="#" onclick="location.href='${path}/message/getAllReceiveMessage.do?rid=${sessionScope.usrNick}'">내 쪽지</a>
 									    <a href="${path}/user/logout.do">로그아웃</a>
 									  </div>
 								</c:otherwise>
