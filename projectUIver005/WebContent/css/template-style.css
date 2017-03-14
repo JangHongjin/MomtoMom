@@ -600,7 +600,21 @@ aside.aside-left {
   -moz-transition: all 0.20s linear 0s !important;
   -webkit-transition: all 0.20s linear 0s !important;
 }
-
+.button2 {
+  border-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0) rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  border-width: 1px;
+  color: white;
+  background-color: rgba(120, 20, 20, 1);
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  transition: all 0.20s linear 0s !important;
+  -o-transition: all 0.20s linear 0s !important;
+  -ms-transition: all 0.20s linear 0s !important;
+  -moz-transition: all 0.20s linear 0s !important;
+  -webkit-transition: all 0.20s linear 0s !important;
+}
 .button:hover, a.button:hover, a.button:link:hover, a.button:visited:hover {
   box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.25) inset;
 }

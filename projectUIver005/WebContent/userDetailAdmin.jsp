@@ -13,6 +13,17 @@
 	    </script>
 	</c:if>
 	
+	<script>
+	$(document).ready(function(){
+		// ** 목록 버튼 클릭 이벤트 : 버튼 클릭시 상세보기화면에 있던 페이지, 검색옵션, 키워드 값을 가지로 목록으로 이동
+        $("#btnList").click(function(){
+            //location.href="${path}/user/getAllUser.do?curPage=${curPage}&searchOption=${searchOption}&keyword=${keyword}";
+        	location.href="${path}/user/getAllUser.do";
+        });
+	});
+	</script>
+	
+	
 </head>
 
 <body class="size-1140">
@@ -32,7 +43,8 @@
 			
 			<div style="text-align: center;">
 		        <h2>관리자 페이지</h2><br>
-		        <a href="${path}/user/getAllUser.do"><h4>회원목록</h4></a>
+		        <button type="button" id="btnList">목록</button>
+		        
 		    </div>
 		    <hr>
 		    
@@ -71,7 +83,7 @@
 			        
 			        
 			        <input class="btn" type="button" value="수정" id="btnUpdate">
-                    <input class="btn" type="button" value="삭제" id="btnDelete">
+                    <input class="btn" type="button" value="탈퇴" id="btnDelete">
                     <div style="color: red;">${message}</div>
 	
 		        </div>

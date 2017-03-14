@@ -73,7 +73,9 @@ body {
 	text-decoration:none;
 }
 
-
+.col-5{
+	colspan:5;
+}
 
 
 /* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 */

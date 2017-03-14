@@ -12,7 +12,7 @@
 	        <div class="tab-content">
 	        	<div class="centerdivm">
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=1">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">복지맘</h2>
@@ -25,7 +25,7 @@
                 <video tabindex="-1" class="video-stream html5-main-video" style="width: 963px; height: 542px; left: 0px; top: 50.6563px;" src="blob:https://www.youtube.com/d36bb143-3e20-488c-a797-ca3ab4353a64"></video>
                 -->
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/user/getAllUser.do">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=2">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">또래맘</h2>
@@ -35,7 +35,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=3">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">교육맘</h2>
@@ -45,7 +45,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=4">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">경력맘<br>[익명]</h2>
@@ -55,7 +55,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=5">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">알뜰맘</h2>
@@ -65,7 +65,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=6">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">성(姓)<br>[익명]</h2>
@@ -75,7 +75,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=7">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">자유맘</h2>
@@ -85,7 +85,7 @@
                   </a>
                 </div>
                 <div class="centerdiv s-3 m-1 l-1">
-                  <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=8">
                     <div class="image-hover-overlay background-primary">
                       <div class="image-hover-overlay-content text-center">
                         <h2 class="text-thin">QnA</h2>

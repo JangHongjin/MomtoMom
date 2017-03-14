@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="projectUIver001">
+    <wb-module deploy-name="projectUIver005">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <property name="context-root" value="projectUIver001"/>
-        <property name="java-output-path" value="/projectUIver001/target/classes"/>
+        <property name="context-root" value="projectUIver005"/>
+        <property name="java-output-path" value="/projectUIver005/target/classes"/>
     </wb-module>
 </project-modules>

@@ -18,7 +18,7 @@ public class MessageDAO {
          ArrayList<MessageDTO> list = null;
          try {
             con = DBUtil.getConnection();
-            pstmt = con.prepareStatement("SELECT msg_No, msg_Sid, msg_Con, msg_Date FROM message WHERE msg_Rid=?");
+            pstmt = con.prepareStatement("SELECT msg_No, msg_Sid, msg_Con, msg_Date FROM message WHERE msg_Rid=? Order by msg_No desc");
             pstmt.setString(1, rid);
             rset = pstmt.executeQuery();
             
@@ -41,7 +41,7 @@ public class MessageDAO {
             ArrayList<MessageDTO> list = null;
             try {
                con = DBUtil.getConnection();
-               pstmt = con.prepareStatement("SELECT msg_No, msg_Rid, msg_Con, msg_Date FROM message WHERE msg_Sid=?");
+               pstmt = con.prepareStatement("SELECT msg_No, msg_Rid, msg_Con, msg_Date FROM message WHERE msg_Sid=? Order by msg_No desc");
                pstmt.setString(1, sid);
                rset = pstmt.executeQuery();
                
@@ -94,7 +94,7 @@ public class MessageDAO {
                pstmt.setInt(1, msgNo);
                rset = pstmt.executeQuery();
                if(rset.next()){
-            	   msg = new MessageDTO(rset.getInt(1),rset.getString(2),rset.getString(3),rset.getString(4),rset.getString(5));
+                  msg = new MessageDTO(rset.getInt(1),rset.getString(2),rset.getString(3),rset.getString(4),rset.getString(5));
                }
             } finally {
                DBUtil.close(con, pstmt,rset);
@@ -103,7 +103,7 @@ public class MessageDAO {
          }
    
    
-   //쪽지 추가
+   //받은 편지함에서 쪽지 추가
    public static boolean writeMessage(MessageDTO message) throws Exception {
       Connection con = null;
       PreparedStatement pstmt = null;
@@ -111,11 +111,10 @@ public class MessageDAO {
          con = DBUtil.getConnection();
       
          //message 테이블에 메시지 삽입
-         pstmt = con.prepareStatement("INSERT INTO message(msg_Sid, msg_Rid, msg_Con, msg_Date) VALUES(?,?,?,?)");
+         pstmt = con.prepareStatement("INSERT INTO message(msg_Sid, msg_Rid, msg_Con, msg_Date) VALUES(?,?,?,curdate())");
          pstmt.setString(1, message.getMsgSid());
          pstmt.setString(2, message.getMsgRid());
          pstmt.setString(3, message.getMsgCon());
-         pstmt.setString(4, "curdate()");
          int result = pstmt.executeUpdate();
          pstmt.close();
          if (result == 1) {
@@ -123,10 +122,38 @@ public class MessageDAO {
             }
       } finally {
          DBUtil.close(con, pstmt);
+         
       }return false;
    }
    
-   //메시지 삭제
+   
+   //보낸 쪽지함에서 쪽지 추가
+   public static boolean writeMessage2(MessageDTO message) throws Exception {
+         Connection con = null;
+         PreparedStatement pstmt = null;
+         try {
+            con = DBUtil.getConnection();
+         
+            //message 테이블에 메시지 삽입
+            pstmt = con.prepareStatement("INSERT INTO message(msg_Sid, msg_Rid, msg_Con, msg_Date) VALUES(?,?,?,curdate())");
+            pstmt.setString(1, message.getMsgSid());
+            pstmt.setString(2, message.getMsgRid());
+            pstmt.setString(3, message.getMsgCon());
+            int result = pstmt.executeUpdate();
+            pstmt.close();
+            if (result == 1) {
+                  return true;
+               }
+         } finally {
+            DBUtil.close(con, pstmt);
+         }return false;
+      }
+   
+   
+   
+   
+   
+   //쪽지 삭제
    public static boolean deleteMessage(int msgNo) throws Exception {
       Connection con = null;
       PreparedStatement pstmt = null;

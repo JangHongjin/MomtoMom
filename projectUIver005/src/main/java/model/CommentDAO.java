@@ -13,6 +13,7 @@ import util.DBUtil;
 //댓글 확인,추가,수정,삭제
 public class CommentDAO {
 
+	
    // 댓글 확인
    public static ArrayList<CommentDTO> getAllComment(int boardNo) throws Exception {
       Connection con = null;
@@ -43,13 +44,12 @@ public class CommentDAO {
       PreparedStatement pstmt = null;
       try {
          con = DBUtil.getConnection();
-
          pstmt = con
-               .prepareStatement("INSERT INTO comment (b_pno, usr_nick, comm_con, comm_date) VALUES (?, ?, ?, ?)");
+               .prepareStatement("INSERT INTO comment (b_pno, usr_nick, comm_con, comm_date) VALUES (?, ?, ?, curdate())");
          pstmt.setInt(1, comm.getbPno());
          pstmt.setString(2, comm.getUsrNick());
          pstmt.setString(3, comm.getCommCon());
-         pstmt.setString(4, "curdate()");
+         //pstmt.setString(4, "curdate()");
 
          int result = pstmt.executeUpdate();
          if (result == 1) {

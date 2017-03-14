@@ -13,15 +13,26 @@ import model.domain.UserDTO;
 
 public class Mom2momService {
 	
-	//게시글이 없을 경우
+	/*//게시글이 없을 경우
 	public static void notExistBoard(String boardName, int pageNo)throws Exception{
 		ArrayList<BoardDTO> boardList = new ArrayList<>(); 
     	boardList = BoardDAO.getBoardList(boardName,pageNo);
     	if(boardList==null){
     		throw new Exception("게시글이 없습니다.");
     	}
+	}*/
+	//게시글이 없을 경우
+		public static void notExistBoard(String boardName, String searchOption, String keyword)throws Exception{
+			List<BoardDTO> boardList = new ArrayList<>(); 
+	    	boardList = BoardDAO.getBoardList(boardName, searchOption, keyword);
+	    	if(boardList==null){
+	    		throw new Exception("게시글이 없습니다.");
+	    	}
+		}
+	//댓글 수 반환
+	public static int getCommentCount(int bPno)throws Exception{
+		return BoardDAO.getCommentCount(bPno);
 	}
-	
 	//게시글 숫자 반환
 	public static int getBoardListCount(String boardName)throws Exception{
 		return BoardDAO.getBoardListCount(boardName);
@@ -45,21 +56,25 @@ public class Mom2momService {
 	public static ArrayList<BoardDTO> searchBoard(String boardName, String searchCond, String searchContent, int pageNo)throws Exception{
 		return searchBoard(boardName, searchCond, searchContent, pageNo); 
 	}
+	//게시글 목록 - 검색, 페이징 구현
+	public static List<BoardDTO> getBoardList(String boardName, String searchOption, String keyword) throws Exception {
+		List<BoardDTO> boardList = BoardDAO.getBoardList(boardName, searchOption, keyword);
+		if(boardList==null){
+			throw new Exception("게시글이 없습니다.");
+		}
+		return boardList; 
+	}
+	// 게시글 수
+	public static int countArticle(String boardName, String searchOption, String keyword) throws Exception {
+		System.out.println("countArticle service단!");
+	    return BoardDAO.countArticle(boardName, searchOption, keyword);
+	}
 	
-    //게시글목록보기
-    public static ArrayList<BoardDTO> getBoardList(String boardName, int pageNo) throws Exception{
-    	ArrayList<BoardDTO> boardList = new ArrayList<>(); 
-    	boardList = BoardDAO.getBoardList(boardName,pageNo);
-    			
-    	if(boardList==null){
-    		throw new Exception("게시글이 없습니다.");
-    	}
-    	return boardList;
-    }
+ 
 	
     //게시글읽기
-    public static BoardDTO getBoardDetail(String boardName, int bPno)throws Exception{
-    	BoardDTO detail = BoardDAO.getBoardDetail(boardName, bPno);
+    public static BoardDTO getBoardDetail(int bPno)throws Exception{
+    	BoardDTO detail = BoardDAO.getBoardDetail(BoardDef.getBoardName(getBno(bPno)), bPno);
     	if(detail==null){
     		throw new Exception("게시글이 없습니다.");
     	}
@@ -94,6 +109,7 @@ public class Mom2momService {
     	if(result==false){
     		throw new Exception("본인이 아닙니다.")
     	}*/
+    	System.out.println("123213123123");
     	return BoardDAO.deleteBoard(board);
     }
    /* //게시글이 본인이 쓴 글인지 확인
@@ -102,8 +118,8 @@ public class Mom2momService {
     }*/
     
     //게시글 조회수++
-    public static boolean readNumIncrease(BoardDTO board)throws Exception{
-    	return BoardDAO.readNumIncrease(board);
+    public static boolean readNumIncrease(int bPno)throws Exception{
+    	return BoardDAO.readNumIncrease(bPno);
     }
     //게시글 좋아요++
     public static boolean likeNumIncrease(BoardDTO board)throws Exception{
@@ -154,9 +170,9 @@ public class Mom2momService {
     	UserDTO user =UserDAO.getUser(usrNick);
 		return user;
     }
-    //회원 리스트
-    public static List<UserDTO> userList(String searchOption, String keyword) throws Exception{
-    	return UserDAO.userList(searchOption, keyword);
+    //회원 리스트 - 관리자(검색, 페이징 구현)
+    public static List<UserDTO> userList(int start, int end, String searchOption, String keyword) throws Exception{
+    	return UserDAO.userList(start, end, searchOption, keyword);
     }
     //회원 레코드 개수
     public static int countUser(String searchOption, String keyword) throws Exception{
@@ -243,7 +259,11 @@ public class Mom2momService {
     public static boolean deleteComment(int commNo)throws Exception{
     	return CommentDAO.deleteComment(commNo);
     }
-    
+    //게시글 번호로 게시판번호 반환
+    public static int getBno(int bPno)throws Exception{
+    	return BoardDAO.getBno(bPno);
+    }
+
 
     
 }

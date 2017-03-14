@@ -125,7 +125,7 @@ public class UserDAO {
 			rset = pstmt.executeQuery();
 
 			if (rset.next()) {
-				user = new UserDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
+				user = new UserDTO(0, rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
 						rset.getString(5), rset.getString(6), rset.getString(7), rset.getInt(8));
 			}
 
@@ -164,34 +164,53 @@ public class UserDAO {
 	}
 	
 	// 회원 리스트
-	public static List<UserDTO> userList(String searchOption, String keyword) throws Exception{
+	public static List<UserDTO> userList(int start, int end, String searchOption, String keyword) throws Exception{
+		System.out.println(111);
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		ArrayList<UserDTO> list = null;//***
+		List<UserDTO> list = new ArrayList<UserDTO>();//***
 		try {
 			con = DBUtil.getConnection();
+
 			if(searchOption.equals("all")){
-				pstmt = con.prepareStatement("SELECT * FROM user "
+				System.out.println("========");
+				String url = "SELECT * FROM ( SELECT @RNUM:=@RNUM+1 AS rn, A.* FROM ( SELECT * FROM user "
 						+ "WHERE usr_email like '%" + keyword + "%'"
-						+ "OR usr_phone like '%" + keyword + "%'"
-						+ "OR usr_nick like '%" + keyword + "%'");
+						+ " OR usr_phone like '%" + keyword + "%'"
+						+ " OR usr_nick like '%" + keyword + "%'"
+						+ " ORDER BY usr_com DESC, usr_nick DESC "
+						+ " ) A, ( SELECT @RNUM:=0 ) R ) B WHERE rn BETWEEN " + start + " AND " + end;
+				pstmt = con.prepareStatement(url);
+				System.out.println(url);
+				
 			}
 			else{
-				pstmt = con.prepareStatement("SELECT * FROM user "
-						+ "WHERE " + searchOption + " like '%" + keyword + "%'");
+				System.out.println("------------");
+				String url = "SELECT * FROM ( "
+						+ "SELECT @RNUM:=@RNUM+1 AS rn, A.* FROM ( "
+						+ "SELECT * FROM user "
+						+ "WHERE " + searchOption + " like '%" + keyword + "%'"
+						+ " ORDER BY usr_com DESC, usr_nick DESC "
+						+ " ) A, "
+						+ " ( SELECT @RNUM:=0 ) R "
+						+ " ) B WHERE rn BETWEEN " + start + " AND " + end;
+				System.out.println(url);
+				pstmt = con.prepareStatement(url);
+				
 			}
-			
+			//pstmt.setString(1, usrNick);
 			rset = pstmt.executeQuery();
 
-			list = new ArrayList<UserDTO>();
+			
 			while (rset.next()) {
-				list.add(new UserDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
-						rset.getString(5), rset.getString(6), rset.getString(7), rset.getInt(8)));
+				list.add(new UserDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5),
+						rset.getString(6), rset.getString(7), rset.getString(8), rset.getByte(9)));
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
+		System.out.println("얍얍 " + list);
 		return list;
 		
 	}
@@ -209,8 +228,8 @@ public class UserDAO {
 
 			list = new ArrayList<UserDTO>();
 			while (rset.next()) {
-				list.add(new UserDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
-						rset.getString(5), rset.getString(6), rset.getString(7), rset.getInt(8)));
+				/*list.add(new UserDTO(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4),
+						rset.getString(5), rset.getString(6), rset.getString(7), rset.getInt(8)));*/
 			}
 		} finally {
 			DBUtil.close(con, pstmt, rset);

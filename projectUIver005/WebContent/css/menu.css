@@ -1,3 +1,9 @@
+.format{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .welcome{
 	font-size: 16px;
     border: none;
@@ -9,11 +15,51 @@
     margin: 1.5rem 1.5rem 0 0;
 }
 
+select{
+	width: 20%;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+select + input{
+	width: 20% !important;
+    padding: 12px 20px !important;
+    margin: 8px 0 !important;
+    display: inline-block !important;
+    border: 1px solid #ccc !important;
+    box-sizing: border-box !important;
+   
+}
+
+.search{
+	background-color: rgba(220, 20, 20, 1) !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    margin: 8px 0 !important;
+    border: none !important;
+    cursor: pointer !important;
+    width: 10% !important;
+}
+
+.listbtn {
+	font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(220, 20, 20, 1);
+    display: inline-block;
+    padding: 0.3rem 3rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
 .dropbtn {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    
     color: white;
     background-color: rgba(220, 20, 20, 1);
     display: inline-block;

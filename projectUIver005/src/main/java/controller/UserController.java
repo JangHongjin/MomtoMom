@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.ListPager;
 import model.Mom2momService;
 import model.domain.UserDTO;
 
@@ -22,8 +23,19 @@ public class UserController {
 	//예외처리
 	@ExceptionHandler(Exception.class)
 	public String exceptionProcess(Exception e){
+		e.printStackTrace();
 		return "redirect:/showError.jsp?errorMsg=" + e.getMessage();
 	}
+	//쪽지함에서 회원정보보기
+    @RequestMapping(value="getUser2.do")
+    public ModelAndView getUser2(String usrNick)throws Exception{
+       ModelAndView mv = new ModelAndView();
+       System.out.println(usrNick);
+       mv.setViewName("userDetail2");
+       mv.addObject("getUser2",Mom2momService.getUser(usrNick));
+       return mv;
+    }
+	
 	 //로그인
     @RequestMapping(value="loginCheck.do")
     public ModelAndView loginCheck(String usrEmail, String usrPw, HttpSession session)throws Exception{
@@ -96,12 +108,24 @@ public class UserController {
     }
     //회원리스트보기-관리자뷰
     @RequestMapping(value="getAllUser.do")
-    public ModelAndView getAllUser(@RequestParam(defaultValue="usr_email") String searchOption,
+    // @RequestParam(defaultValue="") ==> 기본값 할당 : 현재페이지를 1로 초기화
+    public ModelAndView getAllUser(@RequestParam(defaultValue="all") String searchOption,
     								@RequestParam(defaultValue="") String keyword,
+    								@RequestParam(defaultValue="1") int curPage,
     								HttpSession session)throws Exception{
-    	List<UserDTO> list = Mom2momService.userList(searchOption, keyword);//****
+    	
+    	
     	// 레코드의 갯수
         int count = Mom2momService.countUser(searchOption, keyword);//***
+        // 페이지네이션 처리
+        ListPager listPager = new ListPager(count, curPage);
+        int start = listPager.getPageBegin();
+        System.out.println(start);
+        int end = listPager.getPageEnd();
+
+        
+        List<UserDTO> list = Mom2momService.userList(start, end, searchOption, keyword);
+        
     	ModelAndView mv = new ModelAndView();
     	/*mav.addObject("list", list); // 데이터를 저장
         mav.addObject("count", count);
@@ -113,6 +137,7 @@ public class UserController {
         map.put("count", count); // 레코드의 갯수
         map.put("searchOption", searchOption); // 검색옵션
         map.put("keyword", keyword); // 검색키워드
+        map.put("listPager", listPager);
         mv.addObject("map", map); // 맵에 저장된 데이터를 mav에 저장
 
     	
@@ -155,6 +180,7 @@ public class UserController {
     //회원탈퇴-관리자
     @RequestMapping(value="deleteUser.do")
     public ModelAndView deleteUser(UserDTO user, HttpSession session)throws Exception{
+    	System.out.println("deleteUser.do 입성!" +user);
     	ModelAndView mv = new ModelAndView();
     	//비민번호 체크	- usrNick 반환
     	String result = Mom2momService.PwCheck(user.getUsrEmail(), user.getUsrPw());

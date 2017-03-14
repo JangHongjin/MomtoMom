@@ -4,9 +4,11 @@
 <!-- context 경로 -->
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
-
+<div class="container">
+<div class="row s-8 center">
 <main role="main">
   <!-- Section -->
+  
   <section id="section1" class="section-top-padding full-width">
     <h2 class="text-size-50 text-center">MOM to MOM</h2>
     <hr class="break-small background-primary break-center">
@@ -15,14 +17,14 @@
           <!-- <a class="tab-label active-btn">워킹맘</a> -->
           <div class="tab-content">
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/img/portfolio/video.mp4">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=1">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">복지맘</h2>
                     <p>복지 정보를 확인하고 공유!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-02.jpg" alt="" title="Portfolio Image 1" />
+                <img src="${path}/img/m2m/flower3.jpg" alt="" title="Portfolio Image 1" />
               </a>
             </div>
             <!--
@@ -36,33 +38,33 @@
                     <p>자녀 연령대별로 비슷한 경험을 공유!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-09.jpg" alt="" title="Portfolio Image 2" />
+                <img src="${path}/img/m2m/child2.jpg" alt="" title="Portfolio Image 2" />
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=3">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">교육맘</h2>
                     <p>자녀의 교육 관련된 정보 공유 및 상담!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-08.jpg" alt="" title="Portfolio Image 3" />
+                <img src="${path}/img/m2m/brainstorming.jpg" alt="" title="Portfolio Image 3" />
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=4">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">경력맘 [익명]</h2>
                     <p>선배들의 경험담, 후배에게 조언!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-05.jpg" alt="" title="Portfolio Image 4" />
+                <img src="${path}/img/m2m/workingmom.png" alt="" title="Image 4" />
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=5">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">알뜰맘</h2>
@@ -73,36 +75,36 @@
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=6">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">성(姓) [익명]</h2>
                     <p>직장인으로서, 부모로서 다양한 고민거리 해소!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-11.jpg" alt="" title="Portfolio Image 6" />
+                <img src="${path}/img/m2m/couple11.jpg" alt="" title="Portfolio Image 6" />
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=7">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">자유맘</h2>
                     <p>자유롭게 매너롭게 이야기를 공유!</p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-12.jpg" alt="" title="Portfolio Image 7" />
+                <img src="${path}/img/m2m/main3.jpg" alt="" title="Portfolio Image 7" />
               </a>
             </div>
             <div class="s-12 m-6 l-3">
-              <a class="image-with-hover-overlay image-hover-zoom" href="board.jsp">
+              <a class="image-with-hover-overlay image-hover-zoom" href="${path}/board/getBoardList.do?bNo=8">
                 <div class="image-hover-overlay background-primary">
                   <div class="image-hover-overlay-content text-center padding-2x">
                     <h2 class="text-thin">QnA</h2>
                     <p>회사에, 관리자에게 문의사항을 거침없이! </p>
                   </div>
                 </div>
-                <img src="${path}/img/portfolio/thumb-07.jpg" alt="" title="Portfolio Image 8" />
+                <img src="${path}/img/m2m/Q.jpg" alt="" title="Portfolio Image 8" />
               </a>
             </div>
           </div>
@@ -112,3 +114,5 @@
   </section>
 
 </main>
+</div>
+</div>

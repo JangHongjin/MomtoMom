@@ -1,6 +1,7 @@
 package model.domain;
 
 public class UserDTO {
+	private int rnum;
 	private String usrNick;			//회원닉네임
 	private String usrEmail;		//회원이메일
 	private String usrPw;			//회원비밀번호
@@ -12,8 +13,9 @@ public class UserDTO {
 	
 	public UserDTO() {}
 
-	public UserDTO(String usrNick, String usrEmail, String usrPw, String usrBirth, String usrCom, String usrGrant,
+	public UserDTO(int rnum, String usrNick, String usrEmail, String usrPw, String usrBirth, String usrCom, String usrGrant,
 			String usrPhone, int usrExist) {
+		this.rnum = rnum;
 		this.usrNick = usrNick;
 		this.usrEmail = usrEmail;
 		this.usrPw = usrPw;
@@ -22,6 +24,14 @@ public class UserDTO {
 		this.usrGrant = usrGrant;
 		this.usrPhone = usrPhone;
 		this.usrExist = usrExist;
+	}
+	
+	public int getRnum() {
+		return rnum;
+	}
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
 	}
 
 	public String getUsrNick() {
@@ -90,9 +100,9 @@ public class UserDTO {
 
 	@Override
 	public String toString() {
-		return "UserDTO [usrNick=" + usrNick + ", usrEmail=" + usrEmail + ", usrPw=" + usrPw + ", usrBirth=" + usrBirth
-				+ ", usrCom=" + usrCom + ", usrGrant=" + usrGrant + ", usrPhone=" + usrPhone + ", usrExist=" + usrExist
-				+ "]";
+		return "UserDTO [rnum=" + rnum + ", usrNick=" + usrNick + ", usrEmail=" + usrEmail + ", usrPw=" + usrPw
+				+ ", usrBirth=" + usrBirth + ", usrCom=" + usrCom + ", usrGrant=" + usrGrant + ", usrPhone=" + usrPhone
+				+ ", usrExist=" + usrExist + "]";
 	}
 	
 	
